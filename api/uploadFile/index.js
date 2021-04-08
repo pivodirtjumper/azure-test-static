@@ -20,7 +20,7 @@ async function uploadBlob(file) {
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    context.log(connectionString)
+    context.log(process.env)
 
     var boundary = multipart.getBoundary(req.headers['content-type']);
     context.log(req.headers['content-type'])
