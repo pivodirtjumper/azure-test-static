@@ -4,7 +4,6 @@ const connectionString = process.env["AzureWebJobsStorage"];
 const { v4: uuidv4 } = require('uuid');
 
 async function uploadBlob(file) {
-    context.log(connectionString)
     // create blobserviceclient object that is used to create container client
     const blobServiceClient = await BlobServiceClient.fromConnectionString(connectionString);
     // get reference to a container
@@ -21,6 +20,7 @@ async function uploadBlob(file) {
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
+    context.log(connectionString)
 
     var boundary = multipart.getBoundary(req.headers['content-type']);
     context.log(req.headers['content-type'])
