@@ -1,6 +1,6 @@
 var multipart = require("parse-multipart");
 const { BlobServiceClient } = require("@azure/storage-blob");
-const connectionString = process.env["AzureWebJobsStorage"];
+const connectionString = process.env["BlobConnectionString"];
 const { v4: uuidv4 } = require('uuid');
 
 async function uploadBlob(file) {

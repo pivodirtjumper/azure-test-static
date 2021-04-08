@@ -1,5 +1,5 @@
 const { BlobServiceClient, StorageSharedKeyCredential, generateBlobSASQueryParameters, BlobSASPermissions} = require("@azure/storage-blob");
-const connectionString = process.env["AzureWebJobsStorage"];
+const connectionString = process.env["BlobConnectionString"];
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
