@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="secondary"
+      dark
+    >
+      <v-img
+        :lazy-src="require('./assets/rtrd2.png')"
+        contain
+        max-height="50"
+        max-width="200"
+        :src="require('./assets/rtrd2.png')"
+      ></v-img> 
+    
+      <v-spacer/>
+
+      <upload-control/>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UploadControl from './components/UploadControl.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: 'RTRDSHR',
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    UploadControl
+  },
+
+  data: () => ({
+  }),
+};
+</script>
