@@ -1,17 +1,20 @@
 <template>
   <v-app>
-    <v-app-bar
+      <v-app-bar
       app
       color="secondary"
       dark
     >
-      <v-img
-        :lazy-src="require('./assets/rtrd2.png')"
-        contain
-        max-height="50"
-        max-width="200"
-        :src="require('./assets/rtrd2.png')"
-      ></v-img> 
+      <router-link to="/">
+        <v-img
+          :lazy-src="require('./assets/rtrd2.png')"
+          contain
+          max-height="50"
+          max-width="200"
+          :src="require('./assets/rtrd2.png')"
+        ></v-img> 
+      </router-link>
+
     
       <v-spacer/>
 
