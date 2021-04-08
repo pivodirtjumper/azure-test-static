@@ -4,6 +4,7 @@ const connectionString = process.env["AzureWebJobsStorage"];
 const { v4: uuidv4 } = require('uuid');
 
 async function uploadBlob(file) {
+    context.log(connectionString)
     // create blobserviceclient object that is used to create container client
     const blobServiceClient = await BlobServiceClient.fromConnectionString(connectionString);
     // get reference to a container
